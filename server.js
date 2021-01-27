@@ -10,23 +10,34 @@ const client = new Client({
   password: "GE76V9EV",
   port: 5432,
 });
-// client.connect();
-// client
-//   .query("SELECT * FROM manufacturer")
-//   .then( (results)=> {
-//     console.log("Success!");
-//     console.log(results.rowCount);
-//     client.end();
-//   })
-//   .catch( (results) => {
-//     console.log("Ooops!");
-//     console.log(err);
-//     client.end();
-//   });
-
+client.connect();
 app.get("/", (req, resp) => {
-  resp.write("In Get");
-  resp.end();
+    let filterName = req.query.filterName;
+
+    const myQuery = {
+            text :"SELECT * FROM MOCK_DATA WHERE first_name LIKE $1" ,
+            values : ["%" + filterName + "%"]
+    }
+  client
+    .query(myQuery)
+    .then((results) => {
+      console.log("Success!");
+      console.log(results.rowCount);  
+      resp.writeHead(200, {
+        "Content-Type": "text/json"
+    });
+    resp.write(JSON.stringify(results.rows));
+      resp.end();
+    })
+    .catch((error) => {
+      console.log("Ooops!");
+      console.log(error);    
+      resp.writeHead(200, {
+        "Content-Type": "text/json"
+    })
+    resp.write(JSON.stringify("Failed"));
+    resp.end();
+    });
 });
 
 app.get("/placeholder", (req, resp) => {
