@@ -13,6 +13,42 @@ const client = new Client({
   port: 5432,
 });
 client.connect();
+
+app.delete("/",(req,resp)=>{
+    console.log("testing");
+    resp.write("Please add id eg: /21 in order to delete id=21");
+    resp.end();
+
+})
+
+app.delete("/:id",(req,resp)=>{
+    console.log("testing");
+    const myQuery = {
+        text: "DELETE FROM MOCK_DATA WHERE id = $1",
+        values: [req.params.id],
+      };
+      client
+        .query(myQuery)
+        .then((results) => {
+          console.log("Success!");
+          console.log(results.rowCount);
+          resp.writeHead(200, {
+            "Content-Type": "text/json",
+          });
+          resp.write(JSON.stringify("deleted"));
+          resp.end();
+        })
+        .catch((error) => {
+          console.log("Ooops!");
+          console.log(error);
+          resp.writeHead(200, {
+            "Content-Type": "text/json",
+          });
+          resp.write(JSON.stringify("Failed"));
+          resp.end();
+        });
+})
+
 app.post("/", (req, resp) => {
     // console.log(req.body.id);
     // console.log(req.body.first_name);
