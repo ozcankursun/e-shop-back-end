@@ -2,6 +2,8 @@ const { Client } = require("pg");
 const express = require("express");
 
 app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 const client = new Client({
   user: "postgres",
@@ -11,32 +13,69 @@ const client = new Client({
   port: 5432,
 });
 client.connect();
-app.get("/", (req, resp) => {
-    let filterName = req.query.filterName;
-
-    const myQuery = {
-            text :"SELECT * FROM MOCK_DATA WHERE first_name LIKE $1" ,
-            values : ["%" + filterName + "%"]
-    }
+app.post("/", (req, resp) => {
+    // console.log(req.body.id);
+    // console.log(req.body.first_name);
+    // console.log(req.body.last_name);
+    // console.log(req.body.email);
+    // console.log(req.body.gender);
+    // console.log(req.body.ip_address);
+    // resp.write("done")
+    // resp.end();
+    
+  const myQuery = {
+    text: "INSERT INTO MOCK_DATA (id, first_name, last_name, email, gender, ip_address) VALUES($1,$2,$3,$4,$5,$6)",
+    values: [req.body.id,req.body.first_name, req.body.last_name,req.body.email,req.body.gender,req.body.ip_address],
+  };
   client
     .query(myQuery)
     .then((results) => {
       console.log("Success!");
-      console.log(results.rowCount);  
+      console.log(results.rowCount);
       resp.writeHead(200, {
-        "Content-Type": "text/json"
-    });
-    resp.write(JSON.stringify(results.rows));
+        "Content-Type": "text/json",
+      });
+      resp.write(JSON.stringify(results.rows));
       resp.end();
     })
     .catch((error) => {
       console.log("Ooops!");
-      console.log(error);    
+      console.log(error);
       resp.writeHead(200, {
-        "Content-Type": "text/json"
+        "Content-Type": "text/json",
+      });
+      resp.write(JSON.stringify("Failed"));
+      resp.end();
+    });
+    
+});
+
+app.get("/", (req, resp) => {
+  let filterName = req.query.filterName;
+
+  const myQuery = {
+    text: "SELECT * FROM MOCK_DATA WHERE first_name LIKE $1",
+    values: ["%" + filterName + "%"],
+  };
+  client
+    .query(myQuery)
+    .then((results) => {
+      console.log("Success!");
+      console.log(results.rowCount);
+      resp.writeHead(200, {
+        "Content-Type": "text/json",
+      });
+      resp.write(JSON.stringify(results.rows));
+      resp.end();
     })
-    resp.write(JSON.stringify("Failed"));
-    resp.end();
+    .catch((error) => {
+      console.log("Ooops!");
+      console.log(error);
+      resp.writeHead(200, {
+        "Content-Type": "text/json",
+      });
+      resp.write(JSON.stringify("Failed"));
+      resp.end();
     });
 });
 
