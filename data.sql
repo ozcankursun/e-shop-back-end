@@ -1,11 +1,4 @@
-CREATE TABLE manufacturer (
-	id INT,
-	name VARCHAR(50),
-	country_code VARCHAR(50),
-	link VARCHAR(50),
-	description VARCHAR(50),
-	more description VARCHAR(50)
-);
+
 INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (1, 'Rhybox', 'FR', 'http://dummyimage.com/136x225.jpg/ff4444/ffffff', 'Poisoning by amphetamines, assault, sequela', 'Poisoning by amphetamines, assault, sequela');
 INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (2, 'Realbridge', 'FR', 'http://dummyimage.com/123x176.png/5fa2dd/ffffff', 'Juvenile osteochondrosis of radius and ulna', 'Juvenile osteochondrosis of radius and ulna');
 INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (3, 'Blogtag', 'FR', 'http://dummyimage.com/201x115.bmp/5fa2dd/ffffff', 'Maternal care for chromosomal abnormality in fetus, fetus 5', 'Maternal care for (suspected) chromosomal abnormality in fetus, fetus 5');
@@ -19,14 +12,7 @@ INSERT INTO manufacturer (id, name, country_code, link, description, more descri
 
 
 
-CREATE TABLE clothes (
-	id INT,
-	code VARCHAR(50),
-	image_filename VARCHAR(50),
-	manufacturer_id VARCHAR(6),
-	short_description TEXT,
-	more_description TEXT
-);
+
 INSERT INTO clothes (id, code, image_filename, manufacturer_id, short_description, more_description) VALUES (1, '218207', 'Eget.mp3', 5, 'Morbi vel lectus in quam fringilla rhoncus.', 'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.');
 INSERT INTO clothes (id, code, image_filename, manufacturer_id, short_description, more_description) VALUES (2, '046979', 'Mi.mov', 4, 'Nulla nisl. Nunc nisl.', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.');
 INSERT INTO clothes (id, code, image_filename, manufacturer_id, short_description, more_description) VALUES (3, '491131', 'VolutpatSapienArcu.tiff', 7, 'Aenean fermentum.', 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.');
@@ -41,12 +27,7 @@ INSERT INTO clothes (id, code, image_filename, manufacturer_id, short_descriptio
 
 
 
-CREATE TABLE orders (
-	id INT,
-	cloth_id VARCHAR(6),
-	quantity INT,
-	customer_code VARCHAR(50)
-);
+
 INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (1, 6, 59, '3176601565');
 INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (2, 4, 13, '4386353135');
 INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (3, 1, 46, '3371765792');
