@@ -1,13 +1,13 @@
 
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (1, 'Rhybox', 'FR', 'http://dummyimage.com/136x225.jpg/ff4444/ffffff', 'Poisoning by amphetamines, assault, sequela', 'Poisoning by amphetamines, assault, sequela');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (2, 'Realbridge', 'FR', 'http://dummyimage.com/123x176.png/5fa2dd/ffffff', 'Juvenile osteochondrosis of radius and ulna', 'Juvenile osteochondrosis of radius and ulna');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (3, 'Blogtag', 'FR', 'http://dummyimage.com/201x115.bmp/5fa2dd/ffffff', 'Maternal care for chromosomal abnormality in fetus, fetus 5', 'Maternal care for (suspected) chromosomal abnormality in fetus, fetus 5');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (4, 'Buzzshare', 'FR', 'http://dummyimage.com/196x228.bmp/5fa2dd/ffffff', 'Displ bicondylar fx unsp tibia, 7thM', 'Displaced bicondylar fracture of unspecified tibia, subsequent encounter for open fracture type I or II with nonunion');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (5, 'Edgepulse', 'BR', 'http://dummyimage.com/119x201.jpg/dddddd/000000', 'Hypokalemia', 'Hypokalemia');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (6, 'Mybuzz', 'BR', 'http://dummyimage.com/236x222.jpg/5fa2dd/ffffff', 'Other symptoms and signs involving appearance and behavior', 'Other symptoms and signs involving appearance and behavior');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (7, 'Flashspan', 'FR', 'http://dummyimage.com/110x167.bmp/cc0000/ffffff', 'Traum subrac hem w LOC >24 hr w/o ret consc w surv, init', 'Traumatic subarachnoid hemorrhage with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (8, 'Oozz', 'BE', 'http://dummyimage.com/240x227.jpg/dddddd/000000', 'Congenital absence of vagina', 'Congenital absence of vagina');
-INSERT INTO manufacturer (id, name, country_code, link, description, more description) VALUES (9, 'Bluezoom', 'BR', 'http://dummyimage.com/226x125.jpg/dddddd/000000', 'Nondisp commnt fx shaft of r tibia, 7thQ', 'Nondisplaced comminuted fracture of shaft of right tibia, subsequent encounter for open fracture type I or II with malunion');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (1, 'Rhybox', 'FR', 'http://dummyimage.com/136x225.jpg/ff4444/ffffff', 'Poisoning by amphetamines, assault, sequela', 'Poisoning by amphetamines, assault, sequela');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (2, 'Realbridge', 'FR', 'http://dummyimage.com/123x176.png/5fa2dd/ffffff', 'Juvenile osteochondrosis of radius and ulna', 'Juvenile osteochondrosis of radius and ulna');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (3, 'Blogtag', 'FR', 'http://dummyimage.com/201x115.bmp/5fa2dd/ffffff', 'Maternal care for chromosomal abnormality in fetus, fetus 5', 'Maternal care for (suspected) chromosomal abnormality in fetus, fetus 5');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (4, 'Buzzshare', 'FR', 'http://dummyimage.com/196x228.bmp/5fa2dd/ffffff', 'Displ bicondylar fx unsp tibia, 7thM', 'Displaced bicondylar fracture of unspecified tibia, subsequent encounter for open fracture type I or II with nonunion');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (5, 'Edgepulse', 'BR', 'http://dummyimage.com/119x201.jpg/dddddd/000000', 'Hypokalemia', 'Hypokalemia');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (6, 'Mybuzz', 'BR', 'http://dummyimage.com/236x222.jpg/5fa2dd/ffffff', 'Other symptoms and signs involving appearance and behavior', 'Other symptoms and signs involving appearance and behavior');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (7, 'Flashspan', 'FR', 'http://dummyimage.com/110x167.bmp/cc0000/ffffff', 'Traum subrac hem w LOC >24 hr w/o ret consc w surv, init', 'Traumatic subarachnoid hemorrhage with loss of consciousness greater than 24 hours without return to pre-existing conscious level with patient surviving, initial encounter');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (8, 'Oozz', 'BE', 'http://dummyimage.com/240x227.jpg/dddddd/000000', 'Congenital absence of vagina', 'Congenital absence of vagina');
+INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES (9, 'Bluezoom', 'BR', 'http://dummyimage.com/226x125.jpg/dddddd/000000', 'Nondisp commnt fx shaft of r tibia, 7thQ', 'Nondisplaced comminuted fracture of shaft of right tibia, subsequent encounter for open fracture type I or II with malunion');
 
 
 
@@ -28,13 +28,13 @@ INSERT INTO clothes (id, code, image_filename, manufacturer_id, short_descriptio
 
 
 
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (1, 6, 59, '3176601565');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (2, 4, 13, '4386353135');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (3, 1, 46, '3371765792');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (4, 7, 95, '7854096635');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (5, 2, 71, '5045204580');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (6, 5, 58, '1199870358');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (7, 2, 41, '9379165358');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (8, 3, 83, '4970380759');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (9, 1, 33, '1955057192');
-INSERT INTO orders (id, cloth_id, quantity, customer_code) VALUES (10, 7, 16, '8394738435');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (1, '8/13/2018', 2, 49, '4185320604');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (2, '8/6/2020', 8, 75, '6269385202');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (3, '12/10/2019', 2, 88, '4949587765');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (4, '2/24/2019', 6, 80, '4064457986');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (5, '6/19/2020', 9, 67, '5363058413');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (6, '9/1/2018', 7, 72, '7962638214');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (7, '7/18/2018', 4, 91, '6230711389');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (8, '9/28/2020', 2, 40, '4762380954');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (9, '7/16/2019', 3, 55, '9565432387');
+INSERT INTO orders (id, order_date, cloth_id, quantity, customer_code) VALUES (10, '7/4/2020', 4, 69, '7111211014');
