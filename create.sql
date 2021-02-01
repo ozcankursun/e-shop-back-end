@@ -16,7 +16,7 @@ CREATE TABLE clothes (
 	more_description TEXT
 );
 
-create table orders (
+ CREATE TABLE orders (
 	id INT,
 	order_date DATE,
 	cloth_id VARCHAR(6),
