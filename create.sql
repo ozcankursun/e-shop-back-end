@@ -1,10 +1,10 @@
 CREATE TABLE manufacturer (
 	id INT,
-	name VARCHAR(50),
-	country_code VARCHAR(50),
-	link VARCHAR(50),
-	description VARCHAR(50),
-	more description VARCHAR(50)
+	name VARCHAR(100),
+	country_code VARCHAR(100),
+	link VARCHAR(100),
+	description VARCHAR(100),
+	more_description VARCHAR(100)
 );
 
 CREATE TABLE clothes (
