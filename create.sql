@@ -1,25 +1,25 @@
 CREATE TABLE manufacturer (
-	id INT,
-	name VARCHAR(100),
-	country_code VARCHAR(100),
+	id INT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	country_code VARCHAR(100) NOT NULL UNIQUE,
 	link VARCHAR(100),
 	description VARCHAR(100),
 	more_description VARCHAR(100)
 );
 
 CREATE TABLE clothes (
-	id INT,
-	code VARCHAR(50),
-	image_filename VARCHAR(50),
-	manufacturer_id VARCHAR(6),
+	id INT PRIMARY KEY,
+	code VARCHAR(50) NOT NULL UNIQUE,
+	image_filename VARCHAR(50) NOT NULL UNIQUE,
+	manufacturer_id VARCHAR(6) REFERENCES manufacturer ("id") ,
 	short_description TEXT,
 	more_description TEXT
 );
 
  CREATE TABLE orders (
-	id INT,
-	order_date DATE,
-	cloth_id VARCHAR(6),
-	quantity INT,
-	customer_code VARCHAR(50)
+	id INT PRIMARY KEY,
+	order_date DATE NOT NULL,
+	cloth_id VARCHAR(6) REFERENCES clothes ("id"),
+	quantity INT NOT NULL,
+	customer_code VARCHAR(50) NOT NULL UNIQUE
 );
