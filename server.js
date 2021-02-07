@@ -24,7 +24,7 @@ app.delete("/",(req,resp)=>{
 app.delete("/:id",(req,resp)=>{
     console.log("testing");
     const myQuery = {
-        text: "DELETE FROM mock_data WHERE id = $1",
+        text: "DELETE FROM manufacturer WHERE id = $1",
         values: [req.params.id],
       };
       client
@@ -60,8 +60,8 @@ app.post("/", (req, resp) => {
     // resp.end();
     
   const myQuery = {
-    text: "INSERT INTO mock_data (id, first_name, last_name, email, gender, ip_address) VALUES($1,$2,$3,$4,$5,$6)",
-    values: [req.body.id,req.body.first_name, req.body.last_name,req.body.email,req.body.gender,req.body.ip_address],
+    text: "INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES($1,$2,$3,$4,$5,$6)",
+    values: [req.body.id,req.body.name, req.body.country_code,req.body.link,req.body.description,req.body.more_description],
   };
   client
     .query(myQuery)
@@ -90,7 +90,7 @@ app.get("/", (req, resp) => {
   let filterName = req.query.filterName;
 
   const myQuery = {
-    text: "SELECT * FROM mock_data WHERE first_name LIKE $1",
+    text: "SELECT * FROM manufacturer WHERE name LIKE $1",
     values: ["%" + filterName + "%"],
   };
   client
@@ -114,6 +114,7 @@ app.get("/", (req, resp) => {
       resp.end();
     });
 });
+
 
 app.get("/placeholder", (req, resp) => {
   resp.write("placeholder");
