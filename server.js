@@ -24,7 +24,7 @@ app.delete("/",(req,resp)=>{
 app.delete("/:id",(req,resp)=>{
     console.log("testing");
     const myQuery = {
-        text: "DELETE FROM manufacturer WHERE id = $1",
+        text: "DELETE FROM manufactureres WHERE id = $1",
         values: [req.params.id],
       };
       client
@@ -60,7 +60,7 @@ app.post("/", (req, resp) => {
     // resp.end();
     
   const myQuery = {
-    text: "INSERT INTO manufacturer (id, name, country_code, link, description, more_description) VALUES($1,$2,$3,$4,$5,$6)",
+    text: "INSERT INTO manufactureres (id, name, country_code, link, description, more_description) VALUES($1,$2,$3,$4,$5,$6)",
     values: [req.body.id,req.body.name, req.body.country_code,req.body.link,req.body.description,req.body.more_description],
   };
   client
@@ -90,7 +90,7 @@ app.get("/", (req, resp) => {
   let filterName = req.query.filterName;
 // text: "SELECT * FROM clothes"
   const myQuery = {
-    text: "SELECT * FROM manufacturer WHERE name LIKE $1",
+    text: "SELECT * FROM manufactureres WHERE name LIKE $1",
     values: ["%" + filterName + "%"],
   };
   client

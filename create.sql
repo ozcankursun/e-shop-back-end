@@ -1,4 +1,4 @@
-CREATE TABLE manufacturer (
+CREATE TABLE manufactureres (
 	id INT PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
 	country_code VARCHAR(100) NOT NULL,
