@@ -14,17 +14,17 @@ const client = new Client({
 });
 client.connect();
 
-app.delete("/",(req,resp)=>{
+app.delete("/manufacturers",(req,resp)=>{
     console.log("testing");
     resp.write("Please add id eg: /21 in order to delete id=21");
     resp.end();
 
 })
 
-app.delete("/:id",(req,resp)=>{
+app.delete("/manufacturers/:id",(req,resp)=>{
     console.log("testing");
     const myQuery = {
-        text: "DELETE FROM manufactureres WHERE id = $1",
+        text: "DELETE FROM manufacturers WHERE id = $1",
         values: [req.params.id],
       };
       client
@@ -49,18 +49,10 @@ app.delete("/:id",(req,resp)=>{
         });
 })
 
-app.post("/", (req, resp) => {
-    // console.log(req.body.id);
-    // console.log(req.body.first_name);
-    // console.log(req.body.last_name);
-    // console.log(req.body.email);
-    // console.log(req.body.gender);
-    // console.log(req.body.ip_address);
-    // resp.write("done")
-    // resp.end();
+app.post("/manufacturers", (req, resp) => {
     
   const myQuery = {
-    text: "INSERT INTO manufactureres (id, name, country_code, link, description, more_description) VALUES($1,$2,$3,$4,$5,$6)",
+    text: "INSERT INTO manufacturers (id, name, country_code, link, description, more_description) VALUES($1,$2,$3,$4,$5,$6)",
     values: [req.body.id,req.body.name, req.body.country_code,req.body.link,req.body.description,req.body.more_description],
   };
   client
@@ -86,11 +78,11 @@ app.post("/", (req, resp) => {
     
 });
 
-app.get("/", (req, resp) => {
+app.get("/manufacturers", (req, resp) => {
   let filterName = req.query.filterName;
 // text: "SELECT * FROM clothes"
   const myQuery = {
-    text: "SELECT * FROM manufactureres WHERE name LIKE $1",
+    text: "SELECT * FROM manufacturers WHERE name LIKE $1",
     values: ["%" + filterName + "%"],
   };
   client
@@ -116,8 +108,8 @@ app.get("/", (req, resp) => {
 });
 
 app.get("/clothes", (req, resp) => {
-  let filterName = req.query.filterName;
-// text: "SELECT * FROM clothes"
+  // let filterName = req.query.filterName;
+  // text: "SELECT * FROM clothes"
   // const myQuery = {
   //   text: "SELECT * FROM clothes",
   //   values: ["%" + filterName + "%"],
@@ -144,7 +136,7 @@ app.get("/clothes", (req, resp) => {
     });
 });
 app.get("/orders", (req, resp) => {
-  let filterName = req.query.filterName;
+  //let filterName = req.query.filterName;
 
   client
     .query("SELECT * FROM orders")
