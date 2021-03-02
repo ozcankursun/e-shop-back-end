@@ -1,4 +1,4 @@
-CREATE TABLE manufactureres (
+CREATE TABLE manufacturers (
 	id INT PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
 	country_code VARCHAR(100) NOT NULL,
@@ -11,9 +11,10 @@ CREATE TABLE clothes (
 	id INT PRIMARY KEY,
 	code VARCHAR(50) NOT NULL UNIQUE,
 	image_filename VARCHAR(50) NOT NULL UNIQUE,
-	manufacturer_id INT REFERENCES manufacturer ("id") ,
+	manufacturer_id INT REFERENCES manufacturers ("id") ,
 	short_description TEXT,
-	more_description TEXT
+	more_description TEXT,
+	promo BOOLEAN
 );
 
  CREATE TABLE orders (
